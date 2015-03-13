@@ -1,6 +1,6 @@
 <?php
 $bottles = 10;
-$bottle = 1;
+$switch = "bottles";
   while ($bottles > 0) {
     echo "$bottles bottles of beer on the wall,";
     echo "$bottles bottles of beer, \n";
@@ -10,7 +10,7 @@ $bottle = 1;
     
 
 if($bottles == 1 ){
-	$bottle = "bottle";
+	$switch = "bottle";
 }elseif($bottles <= 0) {
 echo "OH NO,NEED MORE BEER!!!";
 	}
