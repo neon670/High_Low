@@ -33,6 +33,7 @@ function cardIsAce($card) {
 // aces are worth 11
 // face cards are worth 10
 // numeric cards are worth their value
+
 function getCardValue($card, $ace = 11) {
 	if ( $card == 'J' || $card == 'Q' || $card == 'K'){
 		 $value = 10;
@@ -41,6 +42,7 @@ function getCardValue($card, $ace = 11) {
 	}else {
 		$value =$card;
 	}
+	// var_dump($value);
 	return $value;
  }
   	
@@ -48,17 +50,21 @@ function getCardValue($card, $ace = 11) {
 // don't forget to factor in aces
 // aces can be 1 or 11 (make them 1 if total value is over 21)
 function getHandTotal($cards) {
-  	$value = 0;
-  		foreach ($cards as $card) {
-  			$value += getCardValue($card[0]);
-  		}
+  	$total = 0;
+  		foreach ($cards as $value) {
+			$total += (int) getCardValue($value[0], $ace = 11);
+			// echo $value;
+			// var_dump($value);
+		}
+ 
 
   		// if ($value > 21){
   		// 	$value = 0{
 
   		// 	}
   		// }
-  		return $value;
+  		
+  		return $total;
 
 }
 
@@ -73,9 +79,10 @@ function getHandTotal($cards) {
 function echoHand($hand, $name, $hidden = false) {
 		foreach	($cards as $card){
  			$total = getHandTotal($hand);
- 		$message = "{$name}:".$card.$card."Total: $total";
+ 		
 	};
-		echo $message;
+	echo  "{$name}:".[$card].[$card]."Total: $total";
+		
 }
 // build the deck of cards
 $deck = buildDeck($suits, $cards);
@@ -88,8 +95,13 @@ $player[] = array_shift($deck);
 // print_r($player);
 // print_r($dealer);
 
-	echo  $player[0][0];
-	echo  $player[0][1];
+	// echo  $player[0][0];
+	// echo  $player[0][1];
+echo getHandTotal($player);
+echo getHandTotal($dealer);
+
+
+
 
 
 // dealer and player each draw two cards
