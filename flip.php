@@ -7,7 +7,7 @@
 			echo "<div class=\"coin\">H</div>";
 		}
 		else {
-			echo "<div class=\"coin\">T</div>";
+			echo "<div class=\"coin\">T";
 		}
 	} while ($flip);
 	$flip = "were";
@@ -16,7 +16,7 @@
 		$verb = "was";
 		$last = "flip";
 	}
-	echo "<p>There {$flip} {$flipCount} {$last}!</p>";
+	echo "There {$flip} {$flipCount} {$last}!";
 	?>
 
 // <?php
