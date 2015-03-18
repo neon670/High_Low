@@ -1,5 +1,15 @@
 <?php
 	echo "Welcome to Blackjack\n";
+	echo " Would you like to play (Y) or (N): ";
+	$input = trim(fgets(STDIN));
+	if ($input == " Y "){
+		echo echoHand;
+		$answer = trim(fgets(STDIN));
+	}elseif($input == "N"){
+		echo "Someone is afraid".PHP_EOL;
+	}
+	// exit(0);
+
 // complete all "todo"s to build a blackjack game
 // create an array for suits
 $suits = ['C', 'H', 'S', 'D'];
@@ -76,12 +86,17 @@ function getHandTotal($cards) {
 // Dealer: [4 C] [???] Total: ???
 // or:
 // Player: [J D] [2 D] Total: 12
-function echoHand($hand, $name, $hidden = false) {
+function echoHand($cards, $name) {
+	$total = getHandTotal($cards);
+	$faceValues = ' ';
 		foreach	($cards as $card){
- 			$total = getHandTotal($hand);
+			$faceValues .= "[". " " .  $card[0] ." " ."of" ." " . $card[1] . " " ."]";
+ 			
+ 			 $message = "$name:" . $faceValues . "Total: $total" .PHP_EOL;
  		
 	};
-	echo  "{$name}:".[$card].[$card]."Total: $total";
+	echo $message;
+	
 		
 }
 // build the deck of cards
@@ -97,8 +112,8 @@ $player[] = array_shift($deck);
 
 	// echo  $player[0][0];
 	// echo  $player[0][1];
-echo getHandTotal($player);
-echo getHandTotal($dealer);
+echo echoHand($dealer, "Dealer");
+echo echoHand($player, "Player");
 
 
 
@@ -114,12 +129,14 @@ echo getHandTotal($dealer);
 // function drawHand($hands){
 
 // }
-// while ($getHandTotal < 21) {
-//  	echo "(H)it" or "(S)tay";
-// } 
-// $input = trim(fgets(STDIN))
-// if ($input == 'H'){
-
+// while ($getHandTotal($player) < 21) {
+//  	echo "(H)it" or "(S)tay\n";
+//  	$answer = trim(fgets(STDIN));
+//  	if ($answer == 'H'){
+//  		drawCard ();
+//  	}elseif ($answer == 'S'){
+//  		exit(0);
+//  	}
 // }
  
 // show the dealer's hand (all cards)
