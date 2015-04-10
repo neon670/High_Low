@@ -9,12 +9,16 @@ function logMessage($logLevel, $message)
 	$date = date('Y-m-d H:i:s');
     $filename = 'logDate.txt';
     $handle = fopen($filename, 'a');
-    fwrite($handle, $date . PHP_EOL);
+    fwrite($handle, $date . " " . $logLevel . $message . PHP_EOL);
     fclose($handle);
 }
+//to do ad function to email 
+function logError($message){
+	logMessage('[Error]', $message);
+}
 
-logMessage("INFO", "This is an info message.");
-logMessage("ERROR", "This is an info message.");
+logMessage("[INFO]", "This is an info message.");
+logError("This is an  error info message.");
 
 
 // $newCities = ['Changhua County, Taiwan', 'Hamina, Finland', 'St Ghislain, Belgium', 'Dublin, Ireland'];

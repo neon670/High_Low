@@ -126,18 +126,18 @@ echo echoHand($player, "Player");
 // echo the player hand
 // todo
 // allow player to "(H)it or (S)tay?" till they bust (exceed 21) or stay
-// function drawHand($hands){
+function drawHand($hands){
 
-// }
-// while ($getHandTotal($player) < 21) {
-//  	echo "(H)it" or "(S)tay\n";
-//  	$answer = trim(fgets(STDIN));
-//  	if ($answer == 'H'){
-//  		drawCard ();
-//  	}elseif ($answer == 'S'){
-//  		exit(0);
-//  	}
-// }
+}
+while ($getHandTotal($player) < 21) {
+ 	echo "(H)it" or "(S)tay\n";
+ 	$answer = trim(fgets(STDIN));
+ 	if ($answer == 'H'){
+ 		drawCard ();
+ 	}elseif ($answer == 'S'){
+ 		exit(0);
+ 	}
+}
  
 // show the dealer's hand (all cards)
 // todo

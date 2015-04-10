@@ -1,7 +1,7 @@
 <?php
-// $random = rand(1,100);
-if $argv = 3
-$random = rand($argv[1], $argv[2]);
+$random = rand(1,100);
+// if $argv = 3
+// $random = rand($argv[1], $argv[2]);
 // $number
 fwrite(STDOUT, 'Guess the number between 1-100:');
 do {
