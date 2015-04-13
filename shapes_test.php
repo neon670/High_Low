@@ -1,16 +1,18 @@
-<?php
-require 'rectangle.php';
-require 'square.php';
+<?php 
+
+require_once 'rectangle.php';
+require_once 'square.php';
+
 
 $rect = new Rectangle(10,13);
 
-echo $rect->getArea() . PHP_EOL;
+echo $rect->area() . PHP_EOL;
 echo $rect->perimeter() . PHP_EOL;
 
 
 $square = new Square(5);
 
-echo $rect->getArea() . PHP_EOL;
-echo $rect->perimeter() . PHP_EOL;
+echo $square->area() . PHP_EOL;
+echo $square->perimeter() . PHP_EOL;
 
 
